@@ -21,8 +21,10 @@ public class Ejercicio6 {
         if (nro != 0 && elevado == 0){
             resultado = 1;
             System.out.println(nro + " elevado a " + elevado + " = " + resultado);
+
         } else if (nro == 0 && elevado == 0) {
             System.out.println(nro + " elevado a " + elevado + " 'No esta definido' ");
+            
         } else {
             resultado = 1;
             for(int i = 1; i <= elevado; i++){
