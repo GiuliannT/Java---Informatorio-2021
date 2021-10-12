@@ -19,24 +19,29 @@ public class Ejercicio7 {
         
         fizzBuzzFuncion(1, 6);
         fizzBuzzFuncion(1, 8);
+        fizzBuzzFuncion(4, 2);
     }
 
     public static void fizzBuzzFuncion(int nro1, int nro2) {
 
         ArrayList<String> arrayNros = new ArrayList<String>();
 
-        for (int i = nro1; i < nro2; i++) {
-            if (i % 2 == 0 && i % 3 == 0) {
-                arrayNros.add("FizzBuzz");
-            } else if (i % 2 == 0) {
-                arrayNros.add("Fizz");
-            } else if (i % 3 == 0) {
-                arrayNros.add("Buzz");
-            } else {
-                arrayNros.add(String.valueOf(i));
-            }
-        }
+        if (nro1 < nro2) {
 
-        System.out.println(arrayNros);
+            for (int i = nro1; i < nro2; i++) {
+                if (i % 2 == 0 && i % 3 == 0) {
+                    arrayNros.add("FizzBuzz");
+                } else if (i % 2 == 0) {
+                    arrayNros.add("Fizz");
+                } else if (i % 3 == 0) {
+                    arrayNros.add("Buzz");
+                } else {
+                    arrayNros.add(String.valueOf(i));
+                }
+            }
+            System.out.println(arrayNros);
+        } else {
+            System.out.println("El primer numero debe ser menor que el segundo");
+        }
     }
 }
