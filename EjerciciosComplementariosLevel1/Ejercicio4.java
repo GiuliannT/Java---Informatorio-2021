@@ -22,6 +22,6 @@ public class Ejercicio4 {
             factorial = factorial * i;
         }
 
-        System.out.println("El factorial de 5 es: " + factorial);
+        System.out.println("El factorial de " + nroIngresado + " es: " + factorial);
     }
 }
