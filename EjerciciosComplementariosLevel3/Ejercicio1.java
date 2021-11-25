@@ -1,3 +1,7 @@
+/*
+1. Dada una lista que contiene valores de tipo String, 
+se deberá filtrar todos los valores que NO sean null o vacío ("").
+*/
 package EjerciciosComplementariosLevel3;
 
 import java.util.ArrayList;
