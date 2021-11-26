@@ -13,17 +13,21 @@ package EjerciciosComplementariosLevel3;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Ejercicio5 {
     public static void main(String[] args) {
         List<Alumno> alumnos = List.of(
             new Alumno("Simpson", "Homero", LocalDate.now().minusYears(30)),
-            new Alumno("Simpson", "Bart", LocalDate.now().minusYears(30)),
-            new Alumno("Simpson", "Lisa", LocalDate.now().minusYears(30)),
-            new Alumno("Simpson", "Maggie", LocalDate.now().minusYears(30)),
-            new Alumno("Simpson", "Marge", LocalDate.now().minusYears(30))
+            new Alumno("Simpson", "Bart", LocalDate.of(1999, 1, 10)),
+            new Alumno("Simpson", "Lisa", LocalDate.of(1995, 5, 15)),
+            new Alumno("Simpson", "Maggie", LocalDate.of(2000, 10, 19)),
+            new Alumno("Simpson", "Marge", LocalDate.of(2006, 11, 22))
             );
-        System.out.println(alumnos);
-
+    Map<String,Integer> edadAlumnos = alumnos.stream()
+                                .collect(Collectors.toMap(p-> (p.getApellido() + " " + p.getNombre()),
+                                    p -> Alumno.getEdad(p.getFechaDeNacimiento())));
+    System.out.print(edadAlumnos);
     }
 }

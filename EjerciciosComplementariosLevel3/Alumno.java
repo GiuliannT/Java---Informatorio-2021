@@ -1,6 +1,7 @@
 package EjerciciosComplementariosLevel3;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Alumno {
 
@@ -11,6 +12,7 @@ public class Alumno {
     public Alumno(String apellido, String nombre, LocalDate fechaDeNacimiento) {
         this.apellido = apellido;
         this.nombre = nombre;
+        this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
     public String getApellido() {
@@ -31,9 +33,8 @@ public class Alumno {
     public void setFechaDeNacimiento(LocalDate fechaDeNacimiento) {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
-
-    @Override
-    public String toString() {
-        return "Alumno [apellido=" + apellido + ", fechaDeNacimiento=" + fechaDeNacimiento + ", nombre=" + nombre + "]";
+    
+    public static Integer getEdad(LocalDate nacimiento){
+        return Period.between(nacimiento, LocalDate.now()).getYears();
     }
 }
